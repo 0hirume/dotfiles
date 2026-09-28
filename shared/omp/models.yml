@@ -1,0 +1,9 @@
+providers:
+  openai-codex:
+    modelOverrides:
+      gpt-6-luna:
+        compactionModel: openai-codex/gpt-6-luna
+      gpt-6-sol:
+        compactionModel: openai-codex/gpt-6-luna
+      gpt-6-astra:
+        compactionModel: openai-codex/gpt-6-luna

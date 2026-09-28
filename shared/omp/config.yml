@@ -1,0 +1,98 @@
+providers:
+  tinyModelDevice: gpu
+modelRoles:
+  default: openai-codex/gpt-6-sol
+  task: openai-codex/gpt-6-luna:high
+  web: openai-codex/gpt-6-luna
+  judge: typesafe/jev-latest
+task:
+  maxConcurrency: 8
+  maxRecursionDepth: 1
+  isolation:
+    enabled: true
+  disabledAgents:
+    - scout
+    - reviewer
+    - security-reviewer
+    - sonic
+  agentModelOverrides:
+    task: openai-codex/gpt-6-luna:high
+compaction:
+  methodOrder:
+    - soft
+    - remote
+symbolPreset: nerd
+composer:
+  shape: field
+  tokenRate: true
+theme:
+  dark: graphite
+setupVersion: 2
+statusLine:
+  preset: custom
+  separator: none
+  contextLine: annotated
+  compactThinkingLevel: false
+  leftSegments:
+    - hostname
+    - model
+    - mode
+    - path
+    - git
+    - pr
+    - subagents
+  rightSegments:
+    - status
+    - usage
+    - token_in
+    - token_out
+    - cost
+    - context_pct
+  showHookStatus: false
+terminal:
+  showProgress: true
+tui:
+  reactions: false
+  codexResetFireworks: true
+  resizeScrollback: append
+display:
+  showTokenUsage: true
+  showTurnTime: true
+  cacheMissMarker: true
+images:
+  blockImages: true
+proseOnlyThinking: false
+textVerbosity: low
+includeModelInPrompt: false
+skillful: false
+steeringMode: all
+error:
+  notify: "on"
+recap:
+  enabled: false
+magicKeywords:
+  enabled: false
+update:
+  channel: canary
+memory:
+  backend: mnemopi
+bashInterceptor:
+  enabled: true
+astGrep:
+  enabled: true
+github:
+  enabled: true
+secrets:
+  enabled: true
+todo:
+  reminders: false
+dev:
+  autoqaConsent: granted
+retry:
+  fallbackChains:
+    web:
+      - openai-codex/gpt-6-luna
+    judge:
+      - "@tiny"
+      - "@smol"
+      - "@default"
