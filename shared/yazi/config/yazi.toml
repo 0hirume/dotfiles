@@ -1,0 +1,4 @@
+[opener]
+edit = [
+  { run = "ms %s", block = true, desc = "Mitos", for = "windows" },
+]

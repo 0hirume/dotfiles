@@ -3,6 +3,7 @@ shared/**
 
 {{ if eq .chezmoi.os "windows" }}
 .config/mitos
+.config/yazi
 {{ end }}
 
 {{ if ne .chezmoi.os "linux" }}
@@ -12,6 +13,7 @@ shared/**
 {{ if ne .chezmoi.os "windows" }}
 AppData/Roaming/mitos
 AppData/Roaming/nushell
+AppData/Roaming/yazi
 {{ end }}
 
 {{ if ne .chezmoi.os "darwin" }}
