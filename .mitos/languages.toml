@@ -1,0 +1,6 @@
+[[language]]
+name = "gotmpl"
+file-types = ["gotmpl", "tmpl"]
+
+[language-server.gopls.config]
+templateExtensions = ["gotmpl", "tmpl"]
