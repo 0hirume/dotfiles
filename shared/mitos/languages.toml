@@ -1,0 +1,99 @@
+[language-server.instar]
+command = "instar"
+args = ["lsp"]
+
+[language-server.instar.config.inlayHints]
+parameters = false
+types = false
+
+[language-server.rust-analyzer.config.check]
+command = "clippy"
+
+[language-server.stylua]
+command = "stylua"
+args = ["--lsp"]
+
+[language-server.typescript]
+command = "tsc"
+args = ["--lsp", "--stdio"]
+
+[[language]]
+name = "cpp"
+indent = { tab-width = 4, unit = "    " }
+
+[[language]]
+name = "github-action"
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
+
+[[language]]
+name = "lua"
+indent = { tab-width = 4, unit = "    " }
+language-servers = ["lua-language-server", "stylua"]
+
+[[language]]
+name = "luau"
+indent = { tab-width = 4, unit = "    " }
+language-servers = ["instar"]
+
+[[language]]
+name = "java"
+formatter = { command = "google-java-format", args = ["--aosp", "-"] }
+
+[[language]]
+name = "javascript"
+language-servers = [
+  { name = "typescript", except-features = ["format"] },
+  "oxlint-language-server",
+  "oxfmt-language-server",
+]
+
+[[language]]
+name = "json"
+language-servers = ["vscode-json-language-server", "oxfmt-language-server"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
+
+[[language]]
+name = "jsonc"
+language-servers = ["vscode-json-language-server", "oxfmt-language-server"]
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
+
+[[language]]
+name = "jsx"
+language-servers = [
+  { name = "typescript", except-features = ["format"] },
+  "oxlint-language-server",
+  "oxfmt-language-server",
+]
+
+[[language]]
+name = "markdown"
+formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
+soft-wrap.enable = true
+
+[[language]]
+name = "tsx"
+language-servers = [
+  { name = "typescript", except-features = ["format"] },
+  "oxlint-language-server",
+  "oxfmt-language-server",
+]
+
+[[language]]
+name = "typescript"
+language-servers = [
+  { name = "typescript", except-features = ["format"] },
+  "oxlint-language-server",
+  "oxfmt-language-server",
+]
+
+[[language]]
+name = "typst"
+formatter = { command = "typstyle" }
+
+[[language]]
+name = "yaml"
+formatter = { "command" = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
+
+[[grammar]]
+name = "luau"
+source = { git = "https://github.com/0hirume/tree-sitter-luau", rev = "b62d9f3cc547229b8f41c82538b2138a08342ea3" }

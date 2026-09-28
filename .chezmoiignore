@@ -1,0 +1,10 @@
+shared/
+shared/**
+
+{{ if eq .chezmoi.os "windows" }}
+.config/mitos
+{{ end }}
+
+{{ if ne .chezmoi.os "windows" }}
+AppData/Roaming/mitos
+{{ end }}

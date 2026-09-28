@@ -1,0 +1,19 @@
+inherits = "kanagawa"
+
+"keyword.storage.type" = { fg = "springViolet1", modifiers = ["italic"] }
+"keyword.storage.modifier" = { fg = "oniViolet", modifiers = ["italic"] }
+
+"type.parameter" = "oniViolet2"
+
+"function.method" = "crystalBlue"
+
+"constant.builtin" = "springBlue"
+"constant.builtin.boolean" = "surimiOrange"
+
+"keyword.function" = "waveRed"
+"keyword.operator" = "boatYellow2"
+
+"punctuation.delimiter" = "fujiGray"
+"punctuation.special" = "sakuraPink"
+
+"string.special" = "lightBlue"

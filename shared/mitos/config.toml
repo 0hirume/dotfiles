@@ -1,0 +1,74 @@
+theme = "kanagawa-rich"
+
+[editor]
+atomic-save = false
+color-modes = true
+completion-trigger-len = 1
+default-line-ending = "lf"
+end-of-line-diagnostics = "hint"
+icons = true
+mouse = false
+rainbow-brackets = true
+shell = ["nu", "-c"]
+trim-final-newlines = true
+trim-trailing-whitespace = true
+
+[editor.breadcrumb]
+enable = true
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+[editor.inline-diagnostics]
+cursor-line = "warning"
+
+[editor.lsp]
+display-inlay-hints = true
+display-progress-messages = true
+
+[editor.statusline]
+left = [
+  "mode",
+  "branch",
+  "file-name",
+  "read-only-indicator",
+  "file-modification-indicator",
+  "diagnostics",
+]
+right = [
+  "spinner",
+  "code-action-hint",
+  "file-encoding",
+  "file-indent-style",
+  "file-line-ending",
+  "file-type",
+  "selections",
+  "register",
+  "position",
+  "total-line-numbers",
+]
+
+[editor.statusline.mode]
+normal = "NORMAL"
+insert = "INSERT"
+select = "SELECT"
+
+[editor.whitespace.render]
+tab = "all"
+
+[keys.normal]
+"\\" = [
+  ':sh rm --force ($nu.temp-dir | path join "yazi-chooser")',
+  ":insert-output yazi '%{buffer_name}' --chooser-file=($nu.temp-dir | path join 'yazi-chooser')",
+  ':sh (ansi --escape "?1049h") + (ansi --escape "?2004h") | save --raw --force (if $nu.os-info.name == "windows" { "\\\\.\\CONOUT$" } else { "/dev/tty" })',
+  ':open %sh{open --raw ($nu.temp-dir | path join "yazi-chooser")}',
+  ":redraw",
+]
