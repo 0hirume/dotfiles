@@ -12,11 +12,9 @@ shared/**
 {{ end }}
 
 {{ if ne .chezmoi.os "windows" }}
-AppData/Roaming/mitos
-AppData/Roaming/nushell
-AppData/Roaming/yazi
+AppData
 {{ end }}
 
 {{ if ne .chezmoi.os "darwin" }}
-Library/Application Support/nushell
+Library
 {{ end }}
