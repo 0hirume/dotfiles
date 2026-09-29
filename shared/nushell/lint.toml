@@ -1,0 +1,4 @@
+[rules]
+catch_builtin_error_try = "off"
+max_function_body_length = "off"
+unhandled_external_error = "off"
