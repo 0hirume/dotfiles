@@ -16,6 +16,8 @@ Do not add comments or documentation by default. Add them when tooling requires 
 
 Before committing, check recent commit messages. Use Conventional Commits by default; in someone else's repository, follow its established convention.
 
+Before committing, inspect the actual changes and separate them by coherent, independently revertible purpose. Stage only the files or hunks for one purpose, including its necessary tests and documentation. Review the staged content before committing; leave unrelated changes unstaged. A session's work is not automatically one commit.
+
 # Defaults
 
 Before setting an explicit option or default, verify its existing value in local source, documentation, or runtime. Omit settings that merely restate defaults.
