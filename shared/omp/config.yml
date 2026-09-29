@@ -1,7 +1,7 @@
 providers:
   tinyModelDevice: gpu
 modelRoles:
-  default: openai-codex/gpt-6-sol
+  default: openai-codex/gpt-6.1-sol
   task: openai-codex/gpt-6-luna:high
   web: openai-codex/gpt-6-luna
   judge: typesafe/jev-latest
