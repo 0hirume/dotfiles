@@ -76,7 +76,7 @@ C-g = [
 ]
 "\\" = [
   ':insert-output rm --force ($nu.temp-dir | path join "yazi-chooser")',
-  ":insert-output yazi '%{buffer_name}' --chooser-file=($nu.temp-dir | path join 'yazi-chooser')",
+  ":insert-output yazi '%{file_path_absolute}' --chooser-file=($nu.temp-dir | path join 'yazi-chooser')",
   ':insert-output (ansi --escape "?1049h") + (ansi --escape "?2004h") | save --raw --force (if $nu.os-info.name == "windows" { "\\\\.\\CONOUT$" } else { "/dev/tty" })',
   ':open %sh{open --raw ($nu.temp-dir | path join "yazi-chooser")}',
   ":redraw",
