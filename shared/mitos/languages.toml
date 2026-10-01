@@ -38,16 +38,6 @@ name = "github-action"
 formatter = { command = "oxfmt", args = ["--stdin-filepath", "%{buffer_name}"] }
 
 [[language]]
-name = "lua"
-indent = { tab-width = 4, unit = "    " }
-language-servers = ["lua-language-server", "stylua"]
-
-[[language]]
-name = "luau"
-indent = { tab-width = 4, unit = "    " }
-language-servers = ["instar"]
-
-[[language]]
 name = "java"
 formatter = { command = "google-java-format", args = ["--aosp", "-"] }
 
@@ -76,6 +66,16 @@ language-servers = [
   "oxlint-language-server",
   "oxfmt-language-server",
 ]
+
+[[language]]
+name = "lua"
+indent = { tab-width = 4, unit = "    " }
+language-servers = ["lua-language-server", "stylua"]
+
+[[language]]
+name = "luau"
+indent = { tab-width = 4, unit = "    " }
+language-servers = ["instar"]
 
 [[language]]
 name = "markdown"
