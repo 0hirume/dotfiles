@@ -2,7 +2,7 @@ providers:
   tinyModelDevice: gpu
 modelRoles:
   default: openai-codex/gpt-6.1-sol
-  task: openai-codex/gpt-6-luna:high
+  task: openai-codex/gpt-6.1-sol
   web: openai-codex/gpt-6-luna
   judge: typesafe/jev-latest
 task:
@@ -15,8 +15,6 @@ task:
     - reviewer
     - security-reviewer
     - sonic
-  agentModelOverrides:
-    task: openai-codex/gpt-6-luna:high
 compaction:
   methodOrder:
     - soft
