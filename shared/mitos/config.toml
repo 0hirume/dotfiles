@@ -65,6 +65,15 @@ select = "SELECT"
 tab = "all"
 
 [keys.normal]
+C-g = [
+  ":write-all",
+  ":vsplit",
+  ":quit",
+  ':insert-output lazygit out+err> (if $nu.os-info.name == "windows" { "\\\\.\\CONOUT$" } else { "/dev/tty" })',
+  ':insert-output (ansi --escape "?1049h") + (ansi --escape "?2004h") | save --raw --force (if $nu.os-info.name == "windows" { "\\\\.\\CONOUT$" } else { "/dev/tty" })',
+  ":redraw",
+  ":reload-all",
+]
 "\\" = [
   ':sh rm --force ($nu.temp-dir | path join "yazi-chooser")',
   ":insert-output yazi '%{buffer_name}' --chooser-file=($nu.temp-dir | path join 'yazi-chooser')",
