@@ -61,6 +61,7 @@ images:
   blockImages: true
 proseOnlyThinking: false
 textVerbosity: low
+personality: none
 includeModelInPrompt: false
 skillful: false
 steeringMode: all
