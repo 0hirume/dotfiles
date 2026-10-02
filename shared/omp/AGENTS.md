@@ -1,33 +1,39 @@
 # Subtractive edits
 
-When asked to remove an idea from prose, make the final text read as though that idea was never raised. Remove its negation, contrast, disclaimer, and references to the edit too. Preserve the remaining meaning.
+Finish every cutover: migrate producers, callers, consumers, tests, and affected documentation. Delete the retired implementation and every reference to it, including wrappers, aliases, fallbacks, dead guards, disabled code, deprecation markers, and tombstone comments. Do not hide or bypass obsolete code instead of deleting it. Verify the old path is absent, the replacement works, and unrelated behavior still works.
 
-When refactoring or retiring code, finish the cutover: migrate every caller, remove the superseded implementation and references to it, and update affected tests and documentation. Delete guards, fallbacks, wrappers, aliases, and comments whose only purpose was the old path; retain protections required by the surviving behavior or an explicit compatibility contract. Verify the old path is absent and unrelated behavior still works. Keep the edit within the requested scope.
+When removing an idea from prose, remove its negations, contrasts, disclaimers, and references to the removal. Preserve the remaining meaning; the text must read as though the idea was never raised.
 
 # Corrections
 
-Skip apologies, self-reproach such as "I should have", excuses, and promises to do better.
+Skip apologies, self-reproach, excuses, and promises to improve. Report facts and the authorized correction concisely.
 
 # Comments and documentation
 
-Do not add comments or documentation by default. Add them when tooling requires them or when they explain a non-obvious API contract, invariant, or safety constraint. Avoid comments that merely restate the code.
+Write self-documenting code. Comments are exceptional: tooling requirements or genuinely non-obvious contracts, invariants, and safety constraints. Preserve required documentation, including comments consumed by tooling. Update affected documentation without creating unsolicited documentation files.
+
+# Checks
+
+Never accommodate an implementation by adding suppressions, weakening checks or assertions, skipping tests, or removing validation, security, error handling, or data-loss protections. Surface conflicting requirements and report remaining exemptions.
+
+Exercise changed behavior; add meaningful regression coverage for non-trivial logic. Remove temporary scaffolding. Distinguish source inspection from executable verification and report actual results and limitations.
 
 # Commits
 
-Before committing, check recent commit messages. Use Conventional Commits by default; in someone else's repository, follow its established convention.
+Check recent commit messages. Use Conventional Commits by default; follow the established convention in someone else's repository.
 
-Before committing, inspect the actual changes and separate them by coherent, independently revertible purpose. Stage only the files or hunks for one purpose, including its necessary tests and documentation. Review the staged content before committing; leave unrelated changes unstaged. A session's work is not automatically one commit.
+Separate actual changes by coherent, independently revertible purpose. Stage only the intended files or hunks, including necessary tests and documentation. Review staged content before committing; leave unrelated changes unstaged. A session is not automatically one commit.
 
 # Defaults
 
-Before setting an explicit option or default, verify its existing value in local source, documentation, or runtime. Omit settings that merely restate defaults.
+Verify existing defaults in source, documentation, or runtime before specifying values. Omit settings that merely restate defaults.
 
 # Naming
 
-Use complete words for project-controlled names and identifiers. Introduce no abbreviations or shortenings.
+Use complete words for project-controlled names and identifiers; introduce no abbreviations or shortenings.
 
-Represent namespaces through directory structure rather than file or directory names.
+Represent namespaces through directory structure.
 
-Use the fewest complete words possible for file and directory names, preferring one word. Obtain explicit approval before creating or renaming a file or directory to a name containing more than one word. Hyphenated, underscored, and camel-cased names count as multiple words.
+Use the fewest complete words for file and directory names, preferring one word. Obtain explicit approval before creating or renaming a file or directory to a multiword name. Hyphenated, underscored, and camel-cased names count as multiple words.
 
-Preserve names required by a language, framework, external API, or tool; those are not project-controlled choices.
+Preserve names required by a language, framework, external API, or tool.
