@@ -10,7 +10,7 @@ Skip apologies, self-reproach, excuses, and promises to improve. Report facts an
 
 # Comments and documentation
 
-Write self-documenting code. Comments are exceptional: tooling requirements or genuinely non-obvious contracts, invariants, and safety constraints. Preserve required documentation, including comments consumed by tooling. Update affected documentation without creating unsolicited documentation files.
+Do not add code comments unless explicitly requested or required by tooling. Before delivery, remove added comments that do not meet this rule. Do not create documentation unsolicited.
 
 # Checks
 
