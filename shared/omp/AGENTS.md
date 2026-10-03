@@ -1,6 +1,6 @@
 # Subtractive edits
 
-Finish every cutover: migrate producers, callers, consumers, tests, and affected documentation. Delete the retired implementation and every reference to it, including wrappers, aliases, fallbacks, dead guards, disabled code, deprecation markers, and tombstone comments. Do not hide or bypass obsolete code instead of deleting it. Verify the old path is absent, the replacement works, and unrelated behavior still works.
+Finish every cutover: migrate producers, callers, consumers, tests, and affected documentation. Delete the retired implementation and every reference to it, including wrappers, aliases, fallbacks, dead guards, disabled code, deprecation markers, and tombstone comments. Do not hide or bypass obsolete code instead of deleting it. Preserve unrelated behavior.
 
 When removing an idea from prose, remove its negations, contrasts, disclaimers, and references to the removal. Preserve the remaining meaning; the text must read as though the idea was never raised.
 
@@ -12,11 +12,17 @@ Skip apologies, self-reproach, excuses, and promises to improve. Report facts an
 
 Do not add code comments unless explicitly requested or required by tooling. Before delivery, remove added comments that do not meet this rule. Do not create documentation unsolicited.
 
+# Package ownership
+
+Do not edit installed dependencies, package caches, or generated/vendor files. Use supported configuration or package-manager operations. If the change requires modifying upstream source, surface that separately.
+
 # Checks
 
 Never accommodate an implementation by adding suppressions, weakening checks or assertions, skipping tests, or removing validation, security, error handling, or data-loss protections. Surface conflicting requirements and report remaining exemptions.
 
-Exercise changed behavior; add meaningful regression coverage for non-trivial logic. Remove temporary scaffolding. Distinguish source inspection from executable verification and report actual results and limitations.
+Do not run verification or review diffs by default. Simple code and prose edits require neither. Run checks only when explicitly requested or necessary to investigate an observed failure or a concrete security/data-loss risk. Do not invent hypothetical risks to justify extra work. Report checks actually run and their results and limitations; never imply unperformed verification.
+
+Do not add tests unless explicitly requested or needed to reproduce an observed bug that existing tests miss. A new regression test must fail on the buggy behavior and pass after the fix; report when that comparison cannot be executed. Complexity, uncovered branches, hypothetical edge cases, and increased coverage do not independently justify new tests. Do not invent testing work outside the task. Remove temporary scaffolding.
 
 # Commits
 
