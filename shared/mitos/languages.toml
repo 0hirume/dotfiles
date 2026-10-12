@@ -32,6 +32,7 @@ args = ["--lsp", "--stdio"]
 [[language]]
 name = "cpp"
 indent = { tab-width = 4, unit = "    " }
+formatter = { command = "clang-format", args = ["--assume-filename=%{file_path_absolute}"] }
 
 [[language]]
 name = "github-action"
