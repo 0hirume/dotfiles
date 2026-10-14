@@ -74,7 +74,7 @@ magicKeywords:
 update:
   channel: canary
 memory:
-  backend: off
+  backend: "off"
 bashInterceptor:
   enabled: true
 astGrep:
@@ -95,3 +95,7 @@ retry:
       - "@tiny"
       - "@smol"
       - "@default"
+codexResets:
+  autoRedeem: "no"
+ask:
+  enabled: false
