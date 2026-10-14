@@ -1,0 +1,17 @@
+{
+  "servers": {
+    "nushell": {
+      "command": "nu",
+      "args": ["--lsp"],
+      "fileTypes": [".nu"],
+      "rootMarkers": ["."]
+    },
+    "nu-lint": {
+      "command": "nu-lint",
+      "args": ["--lsp"],
+      "fileTypes": [".nu"],
+      "rootMarkers": ["."],
+      "isLinter": true
+    }
+  }
+}
