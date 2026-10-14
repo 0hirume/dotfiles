@@ -14,6 +14,8 @@ Do not add code comments unless explicitly requested or required by tooling. Bef
 
 # Package ownership
 
+Always ask before installing anything, including implicit installs by package runners. Check global mise configuration and installed tools first; reuse existing installations.
+
 Do not edit installed dependencies, package caches, or generated/vendor files. Use supported configuration or package-manager operations. If the change requires modifying upstream source, surface that separately.
 
 # Checks
@@ -21,6 +23,8 @@ Do not edit installed dependencies, package caches, or generated/vendor files. U
 Never accommodate an implementation by adding suppressions, weakening checks or assertions, skipping tests, or removing validation, security, error handling, or data-loss protections. Surface conflicting requirements and report remaining exemptions.
 
 Do not run verification or review diffs by default. Simple code and prose edits require neither. Run checks only when explicitly requested or necessary to investigate an observed failure or a concrete security/data-loss risk. Do not invent hypothetical risks to justify extra work. Report checks actually run and their results and limitations; never imply unperformed verification.
+
+For Nushell changes, run `nufmt <files>`, `nu-lint <files>`, and `nu --ide-check 100 <file>` for each affected script.
 
 Do not add tests unless explicitly requested or needed to reproduce an observed bug that existing tests miss. A new regression test must fail on the buggy behavior and pass after the fix; report when that comparison cannot be executed. Complexity, uncovered branches, hypothetical edge cases, and increased coverage do not independently justify new tests. Do not invent testing work outside the task. Remove temporary scaffolding.
 
@@ -43,3 +47,13 @@ Represent namespaces through directory structure.
 Use the fewest complete words for file and directory names, preferring one word. Obtain explicit approval before creating or renaming a file or directory to a multiword name. Hyphenated, underscored, and camel-cased names count as multiple words.
 
 Preserve names required by a language, framework, external API, or tool.
+
+# File organization
+
+Use one explicit organization convention throughout each project, respecting language and framework requirements. Directories represent coherent subsystems; leaf files own coherent responsibilities and their supporting types. Module entry points declare and expose their contents. Keep implementation in responsibility-named files.
+
+Keep file anatomy consistent within each language: module declarations, grouped imports or includes, constants, types and implementations, and functions follow a deliberate order. Keep related definitions together. Standardize naming, visibility, documentation placement, and helper placement across comparable files.
+
+Separate handwritten sources by language in mixed-language projects. In C++, give independently consumed components an interface header and implementation; keep private helpers local. Include the implemented interface explicitly, keep headers self-contained, and organize class implementations by component ownership.
+
+Prefer existing lints and formatters to enforce agreed conventions. Check tool availability, defaults, and enforcement limits before configuring them. Enforce structural ordering without alphabetizing semantically ordered fields, variants, or methods. Audit directory grouping, module roots, header ownership, and file anatomy explicitly alongside behavior and architecture.
