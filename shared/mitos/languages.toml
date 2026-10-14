@@ -1,6 +1,6 @@
 [language-server.instar]
 command = "instar"
-args = ["lsp"]
+args = ["server"]
 
 [language-server.instar.config.inlayHints]
 parameters = false

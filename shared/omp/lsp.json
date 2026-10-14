@@ -1,5 +1,12 @@
 {
   "servers": {
+    "instar": {
+      "command": "instar",
+      "args": ["server"],
+      "fileTypes": [".luau"],
+      "languageId": "luau",
+      "rootMarkers": ["."]
+    },
     "nushell": {
       "command": "nu",
       "args": ["--lsp"],
