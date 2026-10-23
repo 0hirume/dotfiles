@@ -2,10 +2,6 @@
 command = "instar"
 args = ["server"]
 
-[language-server.instar.config.inlayHints]
-parameters = false
-types = false
-
 [language-server.powershell]
 command = "pwsh"
 args = [
