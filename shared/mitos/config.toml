@@ -79,21 +79,5 @@ tab = "all"
 enable = false
 
 [keys.normal]
-C-g = [
-  ":write-all",
-  ":vsplit",
-  ":quit",
-  ':insert-output lazygit out+err> (if $nu.os-info.name == "windows" { "\\\\.\\CONOUT$" } else { "/dev/tty" })',
-  ':insert-output (ansi --escape "?1049h") + (ansi --escape "?2004h") | save --raw --force (if $nu.os-info.name == "windows" { "\\\\.\\CONOUT$" } else { "/dev/tty" })',
-  ":redraw",
-  ":reload-all",
-]
-"\\" = [
-  ':insert-output rm --force ($nu.temp-dir | path join "yazi-chooser")',
-  ":insert-output yazi '%{file_path_absolute}' --chooser-file=($nu.temp-dir | path join 'yazi-chooser')",
-  ':insert-output (ansi --escape "?1049h") + (ansi --escape "?2004h") | save --raw --force (if $nu.os-info.name == "windows" { "\\\\.\\CONOUT$" } else { "/dev/tty" })',
-  ":set-register | %reg{@}",
-  ':set-register @ %sh{let restore = ":set-register @ %%reg{|}<ret>"; if ($nu.temp-dir | path join "yazi-chooser" | path exists) { ":open %%sh{open --raw ($nu.temp-dir | path join \"yazi-chooser\")}<ret>" + $restore } else { $restore }}',
-  "replay_macro",
-  ":redraw",
-]
+C-g = ":sh wt -w 0 new-tab -d $env.PWD lazygit"
+"\\" = ":sh wt -w 0 new-tab -d $env.PWD yazi"
