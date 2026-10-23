@@ -1,25 +1,27 @@
 theme = "kanagawa-rich"
 
 [editor]
-atomic-save = false
-color-modes = true
-completion-trigger-len = 1
-default-line-ending = "lf"
-end-of-line-diagnostics = "hint"
 icons = true
-mouse = false
-rainbow-brackets = true
 shell = ["nu", "-c"]
-trim-final-newlines = true
-trim-trailing-whitespace = true
 
 [editor.breadcrumb]
 enable = true
 
-[editor.cursor-shape]
+[editor.cursor.shape]
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[editor.completion]
+trigger-length = 1
+
+[editor.files]
+default-line-ending = "lf"
+
+[editor.files.save]
+atomic = false
+trim-final-newlines = true
+trim-trailing-whitespace = true
 
 [editor.file-picker]
 hidden = false
@@ -27,12 +29,20 @@ hidden = false
 [editor.indent-guides]
 render = true
 
-[editor.inline-diagnostics]
+[editor.diagnostics.inline]
 cursor-line = "warning"
 
-[editor.lsp]
-display-inlay-hints = true
-display-progress-messages = true
+[editor.diagnostics.end-of-line]
+severity = "hint"
+
+[editor.rainbow-brackets]
+enable = true
+
+[editor.lsp.progress]
+enable = true
+
+[editor.lsp.inlay-hints]
+enable = true
 
 [editor.statusline]
 left = [
@@ -60,9 +70,13 @@ right = [
 normal = "NORMAL"
 insert = "INSERT"
 select = "SELECT"
+color = true
 
 [editor.whitespace.render]
 tab = "all"
+
+[editor.mouse]
+enable = false
 
 [keys.normal]
 C-g = [
