@@ -17,10 +17,6 @@ preset = "OTBS"
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
-[language-server.stylua]
-command = "stylua"
-args = ["--lsp"]
-
 [language-server.typescript]
 command = "tsc"
 args = ["--lsp", "--stdio"]
