@@ -2,7 +2,7 @@ theme = "kanagawa-rich"
 
 [editor]
 icons = true
-shell = ["nu", "-c"]
+shell = ["C:/Users/ohirume/scoop/apps/nu/current/nu.exe", "-c"]
 
 [editor.breadcrumb]
 enable = true
