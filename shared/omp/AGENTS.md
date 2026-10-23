@@ -26,8 +26,6 @@ Do not run verification or review diffs by default. Simple code and prose edits 
 
 For Nushell changes, run `nufmt <files>`, `nu-lint <files>`, and `nu --ide-check 100 <file>` for each affected script.
 
-Do not add tests unless explicitly requested or needed to reproduce an observed bug that existing tests miss. A new regression test must fail on the buggy behavior and pass after the fix; report when that comparison cannot be executed. Complexity, uncovered branches, hypothetical edge cases, and increased coverage do not independently justify new tests. Do not invent testing work outside the task. Remove temporary scaffolding.
-
 # Commits
 
 Check recent commit messages. Use Conventional Commits by default; follow the established convention in someone else's repository.
