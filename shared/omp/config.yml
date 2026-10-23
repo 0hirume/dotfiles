@@ -7,7 +7,7 @@ modelRoles:
   judge: typesafe/jev-latest
 task:
   maxConcurrency: 8
-  maxRecursionDepth: 1
+  maxRecursionDepth: 0
   isolation:
     enabled: true
   disabledAgents:
