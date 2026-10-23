@@ -80,4 +80,4 @@ enable = false
 
 [keys.normal]
 C-g = ":sh wt -w 0 new-tab -d $env.PWD lazygit"
-"\\" = ":sh wt -w 0 new-tab -d $env.PWD yazi"
+"\\" = ''':sh wt -w 0 new-tab -d $env.PWD yazi r#'%{file_path_absolute}'#'''
