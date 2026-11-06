@@ -25,7 +25,7 @@ composer:
   tokenRate: true
 theme:
   dark: graphite
-setupVersion: 2
+setupVersion: 3
 statusLine:
   preset: custom
   separator: none
@@ -57,8 +57,6 @@ display:
   showTokenUsage: true
   showTurnTime: true
   cacheMissMarker: true
-images:
-  blockImages: true
 proseOnlyThinking: false
 textVerbosity: low
 personality: none
@@ -73,6 +71,7 @@ magicKeywords:
   enabled: false
 update:
   channel: canary
+  auto: false
 memory:
   backend: "off"
 bashInterceptor:
