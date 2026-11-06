@@ -1,6 +1,7 @@
 theme = "kanagawa-rich"
 
 [editor]
+border-style = "plain"
 icons = true
 shell = ["C:/Users/ohirume/scoop/apps/nu/current/nu.exe", "-c"]
 
@@ -11,6 +12,9 @@ enable = true
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[editor.command-line]
+show = "auto"
 
 [editor.completion]
 trigger-length = 1
@@ -79,5 +83,11 @@ tab = "all"
 enable = false
 
 [keys.normal]
-C-g = ":sh wt -w 0 new-tab -d $env.PWD lazygit"
-"\\" = ''':sh wt -w 0 new-tab -d $env.PWD yazi r#'%{file_path_absolute}'#'''
+C-g = ":noop %sh_interactive{lazygit}"
+"\\" = ''':open "%sh_interactive{
+  let chooser = (mktemp)
+  yazi r#'%{file_path_absolute}'# --chooser-file $chooser
+  let chosen = open --raw $chooser | str trim
+  rm --force $chooser
+  print --no-newline (if ($chosen | is-empty) { r#'%{file_path_absolute}:%{cursor_line}:%{cursor_column}'# } else { $chosen })
+}"'''
