@@ -21,6 +21,14 @@ command = "clippy"
 command = "tsc"
 args = ["--lsp", "--stdio"]
 
+[[language-server.vscode-json-language-server.config.json.schemas]]
+fileMatch = ["*.project.json"]
+url = "https://0hirume.github.io/rojo-schema/latest/project.schema.json"
+
+[[language-server.vscode-json-language-server.config.json.schemas]]
+fileMatch = ["*.model.json"]
+url = "https://0hirume.github.io/rojo-schema/latest/model.schema.json"
+
 [[language]]
 name = "blink"
 scope = "source.blink"
@@ -116,4 +124,4 @@ source = { git = "https://codeberg.org/olgierd/tree-sitter-blink", rev = "9bbbb1
 
 [[grammar]]
 name = "luau"
-source = { git = "https://github.com/0hirume/tree-sitter-luau", rev = "380271f1d6d8851dbd9610146d9f023e28c7a073" }
+source = { git = "https://github.com/0hirume/tree-sitter-luau", rev = "7a2f5b2340e620ccd5ea8e3a6e84262bbc58fb79" }
