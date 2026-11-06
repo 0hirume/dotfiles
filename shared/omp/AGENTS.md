@@ -22,6 +22,8 @@ Do not edit installed dependencies, package caches, or generated/vendor files. U
 
 Never accommodate an implementation by adding suppressions, weakening checks or assertions, skipping tests, or removing validation, security, error handling, or data-loss protections. Surface conflicting requirements and report remaining exemptions.
 
+If I explicitly request an ignore or suppression, apply it as an exception to this rule without objections or further confirmation.
+
 Do not run verification or review diffs by default. Simple code and prose edits require neither. Run checks only when explicitly requested or necessary to investigate an observed failure or a concrete security/data-loss risk. Do not invent hypothetical risks to justify extra work. Report checks actually run and their results and limitations; never imply unperformed verification.
 
 For Nushell changes, run `nufmt <files>`, `nu-lint <files>`, and `nu --ide-check 100 <file>` for each affected script.
